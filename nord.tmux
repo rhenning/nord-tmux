@@ -36,13 +36,13 @@ __load() {
   local date_format=$(tmux show-option -gqv "$NORD_TMUX_STATUS_CONTENT_DATE_FORMAT")
 
   if [ "$(tmux show-option -gqv "clock-mode-style")" == '12' ]; then
-    tmux set-environment -g NORD_TMUX_STATUS_TIME_FORMAT "%I:%M %p"
+    tmux set-environment -g NORD_TMUX_STATUS_TIME_FORMAT "%I꞉%M %p"
   else
-    tmux set-environment -g NORD_TMUX_STATUS_TIME_FORMAT "%H:%M"
+    tmux set-environment -g NORD_TMUX_STATUS_TIME_FORMAT "%H꞉%M %z"
   fi
 
   if [ -z "$date_format" ]; then
-    tmux set-environment -g NORD_TMUX_STATUS_DATE_FORMAT "%Y-%m-%d"
+    tmux set-environment -g NORD_TMUX_STATUS_DATE_FORMAT "%Y·%m·%d"
   else
     tmux set-environment -g NORD_TMUX_STATUS_DATE_FORMAT "$date_format"
   fi
